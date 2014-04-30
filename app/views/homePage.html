@@ -1,0 +1,17 @@
+<div class="container" tabindex="0" ui-keyup="{'81 87 68 88 90 65 83':'hitKey($event)'}">
+	<div class="row">
+		<div class="col-xs-6 data">
+			<h1>{{gameData.message}}</h1>
+			<h2>Turn: {{gameData.turn}} Phase: {{gameData.phase}}</h2>
+			<h2>Band Info</h2>
+			<div ng-repeat="band in gameData.bands">
+				<p>Name: {{band.name}}</p>
+				<p>Population: {{band.population}}</p>
+			</div>
+		</div>
+
+		<div id='canvas' class="col-xs-6">
+	        <canvas id="canvasId" width="500" height="300"></canvas>
+	    </div>
+    </div>
+</div>
