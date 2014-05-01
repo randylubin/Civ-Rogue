@@ -9,6 +9,7 @@ civRogue = angular.module('civRogue', ['ui.keypress']).
 civRogue.factory('gameData', function(){
 	gameData = {
 		message: 'Welcome to Civ Rogue',
+		flavorText: 'You lead a band of kinsman, hunter-gathers on a fertile plane.',
 
 		//game loop
 		turn: 0,
@@ -39,6 +40,7 @@ civRogue.factory('gameData', function(){
 		population: 20,
 		color: '#DAA520'
 	};
+
 	gameData.aiBandFactory = function(id){
 		band = {
 			name: 'AI Band ' + id,
