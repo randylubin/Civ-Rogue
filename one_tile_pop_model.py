@@ -3,20 +3,6 @@ import math
 def n():
 	print "\n"
 
-n()	
-print "welcome to the one tile population simulator"
-print "each round represents a generation, you can control growth rate"
-print "if you exceed carrying capacity, it decreases future carrying capactiy"
-print "growth rate is measured in % increase so '20' is a 20% rate for 100 person population will yeild 120 people next generation"
-n()
-
-
-population = 40
-carryingCapacity = 100
-carryingCapacityEquilibrium = 100
-
-growth = 20
-
 def getGrowthRate(growth):
 	try:
 		return input("What is the new growth rate?")
@@ -84,16 +70,32 @@ def testEndConditions(carryingCapacity, population):
 	return 0
 
 while True:
-	displayStats()
-	population, growth = adjustPopulation(population, growth, carryingCapacity)
-	carryingCapacity = adjustCarryingCapacity(carryingCapacity, population, carryingCapacityEquilibrium)
+	n()	
+	print "welcome to the one tile population simulator"
+	print "each round represents a generation, you can control growth rate"
+	print "if you exceed carrying capacity, it decreases future carrying capactiy"
+	print "growth rate is measured in % increase so '20' is a 20% rate for 100 person population will yeild 120 people next generation"
+	n()
 
-	
-	end = testEndConditions(carryingCapacity, population)
-	if end:
-		break
-	if growth == 123:
-		break
 
-	
+	population = 40
+	carryingCapacity = 100
+	carryingCapacityEquilibrium = 100
+	growth = 20
 
+	while True:
+		displayStats()
+		population, growth = adjustPopulation(population, growth, carryingCapacity)
+		carryingCapacity = adjustCarryingCapacity(carryingCapacity, population, carryingCapacityEquilibrium)
+
+		
+		end = testEndConditions(carryingCapacity, population)
+		if end:
+			break
+		if growth == 123:
+			break
+	n()
+	try:
+		input("Again?")
+	except:
+		print ""
